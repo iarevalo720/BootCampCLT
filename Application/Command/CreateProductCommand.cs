@@ -1,6 +1,6 @@
-﻿namespace BootcampCLT.Application.Command
-{
-    public class CreateProductCommand
-    {
-    }
-}
+﻿using BootcampCLT.Api.Response;
+using MediatR;
+
+public record CreateProductCommand(
+    string Codigo, string Nombre, string? Descripcion,
+    decimal Precio, int CategoriaId) : IRequest<ProductoResponse>;
